@@ -9,7 +9,7 @@ uniform float u_time;
 uniform sampler2D u_tex0; //MonaLisa
 
 //reCreated from inigo quilez - http://iquilezles.org/www/articles/voronoise/voronoise.htm
-//My Transition: shape, recreate color
+//My Transition: shape, color, motion
 
 vec3 hash3( vec2 p ) {
 vec3 q = vec3( dot(p,vec2(-0.610,0.500)),
