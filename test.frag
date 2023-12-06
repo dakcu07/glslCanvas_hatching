@@ -29,7 +29,7 @@ float iqnoise( in vec2 x, float u, float v ) {
     for (int j=-2; j<=2; j++) {//circle size
         for (int i=-2; i<=2; i++) {
             vec2 g = vec2(float(i),float(j));
-            vec3 o = hash3(p + g)*vec3(u,u,1.2-0.5*abs(sin(0.5*u_time)));
+            vec3 o = hash3(p + g)*vec3(u,u,1.2-0.5*abs(sin(0.3*u_time)));
             vec2 r = g - f + o.xy;
             float d = dot(r,r);
             float ww = pow( 1.0-smoothstep(0.3,0.5,sqrt(d)), k);
@@ -45,7 +45,7 @@ float breathing=(exp(sin(u_time*2.0*3.14159/8.0)) - 0.36787944)*0.42545906412;
 float mouseEffect(vec2 uv, vec2 mouse, float size)
 {
     float dist=length(uv-mouse);
-    return smoothstep(size, 3.*size+0.2*(breathing*0.2+0.5), dist);  //size
+    return smoothstep(size, 3.*size+0.2*(breathing*0.7+0.5), dist);  //size
 }
 
 float rand(vec2 n) {
@@ -109,7 +109,7 @@ void main() {
 
     // combone texColor & noiseColor
     vec3 finalColor;
-    finalColor = texColor.rgb * noiseColor + fog*0.5;
+    finalColor = texColor.rgb * noiseColor + fog*0.3;
 
     gl_FragColor = vec4(finalColor, texColor.a); //use original alpha
 }

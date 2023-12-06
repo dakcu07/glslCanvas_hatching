@@ -24,9 +24,9 @@
             }
 
             #credits {
-                position: absolute; 
-                bottom: 10px; 
-                right: 15px; 
+                position: absolute;
+                bottom: 10px;
+                right: 15px;
                 text-align: right;
                 background: rgba(0,0,0,.5);
                 padding: 12px;
@@ -38,7 +38,7 @@
             .label {
                 color: white;
                 font-family: Helvetica, Arial, sans-serif;
-                text-decoration: none; 
+                text-decoration: none;
                 line-height: 0.0;
             }
 
@@ -48,7 +48,7 @@
             }
 
             #author {
-                font-size: 14px; 
+                font-size: 14px;
                 font-style: italic;
                 font-weight: 100;
             }
@@ -56,7 +56,7 @@
 
     </head>
     <body>
-        <canvas id="glslCanvas" data-fragment-url="test.frag" width="800" height="600" data-textures="data/MonaLisa.jpg, data/hatch_0.jpg, data/hatch_1.jpg, data/hatch_2.jpg, data/hatch_3.jpg, data/hatch_4.jpg, data/hatch_5.jpg"></canvas>
+        <canvas id="glslCanvas" data-fragment-url="test.frag" width="800" height="600" data-textures="data/BG.jpg, data/hatch_0.jpg, data/hatch_1.jpg, data/hatch_2.jpg, data/hatch_3.jpg, data/hatch_4.jpg, data/hatch_5.jpg"></canvas>
         <div id="credits">
             <p class="label" id="title"></p>
             <p class="label" id="author"></p>
@@ -70,7 +70,7 @@
         var sandbox_content = "";
         var sandbox_title = "";
         var sandbox_author = "";
-        var sandbox_thumbnail = ""; 
+        var sandbox_thumbnail = "";
         canvas.style.width = '100%';
         canvas.style.height = '100%';
 
@@ -113,7 +113,7 @@
                                 'type' : 'website',
                                 'url': window.location.href,
                                 'image': sandbox_thumbnail
-                            })                 
+                            })
                 })
         }
 
@@ -146,7 +146,7 @@
                 var meta = document.createElement('meta');
                 meta.setAttribute('og:'+key, obj[key]);
                 document.getElementsByTagName('head')[0].appendChild(meta);
-            }              
+            }
         }
 
         var query = parseQuery(window.location.search.slice(1));
